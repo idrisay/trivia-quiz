@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+#quiz-wrapper {
+  max-width: 800px;
+  padding: 20px;
+}
+
+#quiz-wrapper h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+#quiz-wrapper #category {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#quiz-wrapper #loading {
+  width: 100px;
+}
+
+#quiz-wrapper #difficulty {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#quiz-wrapper .options {
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid lightblue;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#quiz-wrapper .options:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
+#quiz-wrapper #result {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  font-size: 2rem;
+  border-top: 2px solid grey;
+}
+
+#quiz-wrapper #result button {
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  cursor: pointer;
+}
