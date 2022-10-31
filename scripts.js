@@ -24,7 +24,7 @@ const selectOption = (event) => {
     event.target.style.backgroundColor = "red";
     event.target.style.color = "white";
     document.getElementById("result").innerHTML =
-     '<button id="next">Next question</button>' +   "<p>Try again</p>";
+     '<button id="next">Next question</button>' +   `<p>Try again, Correct answer is ${question.correct_answer}</p>`;
   }
 
   for (var i = 0; i < optionElements.length; i++) {
