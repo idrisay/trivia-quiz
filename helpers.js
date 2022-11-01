@@ -8,13 +8,27 @@ const showLoading = (quizWrapper) => {
   quizWrapper.innerHTML = '<img id="loading" src="./loading.gif" />';
 };
 
-const showQuestion = (question, quizWrapper) => {
+let numberquestions = 0;
+
+const showQuestion = (
+  question,
+  quizWrapper,
+  questionNumberElm,
+  dogru,
+  yanlis
+) => {
   let randomNumber = getRandomNumber(0, 3);
+  console.log("noq", numberquestions);
 
-  let answers = [...question.incorrect_answers]
+  numberquestions += 1;
 
-  answers.splice(randomNumber, 0,  question.correct_answer);
+  console.log(questionNumberElm);
 
+  questionNumberElm.innerHTML = numberquestions;
+
+  let answers = [...question.incorrect_answers];
+
+  answers.splice(randomNumber, 0, question.correct_answer);
 
   console.log(question);
   let newQuestionElm = '<div clas="question-wrapper">';
@@ -27,12 +41,26 @@ const showQuestion = (question, quizWrapper) => {
     '<span id="difficulty"><i class="fas fa-diamond"></i> ' +
     question.difficulty +
     "</span>";
+  newQuestionElm +=
+    "<p class='true'>" +
+    "True:" +
+    "<span class='truespan '>" +
+    dogru +
+    "</span>" +
+    "</P>";
+  newQuestionElm +=
+    "<p class='false'>" +
+    "False:" +
+    "<span class='falsespan '>" +
+    yanlis +
+    "</span>" +
+    "</P>";
 
-    answers.forEach(element => {
-        newQuestionElm += '<p class="options">' + element + '</p>'
-    });
+  answers.forEach((element) => {
+    newQuestionElm += '<p class="options">' + element + "</p>";
+  });
 
-    newQuestionElm += '<div id="result"></div>'
+  newQuestionElm += '<div id="result"></div>';
 
   quizWrapper.innerHTML = newQuestionElm;
 };
@@ -40,7 +68,5 @@ const showQuestion = (question, quizWrapper) => {
 const getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
-
-
 
 export { fetchQuestions, showLoading, showQuestion };
