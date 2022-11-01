@@ -1,6 +1,7 @@
-import { fetchQuestions, showLoading, showQuestion }  from "./helpers.js";
+import { fetchQuestions, showLoading, showQuestion } from "./helpers.js";
 
-
+let dogru = 0;
+let yanlis = 0;
 
 const questionNumberElm = document.getElementById("numberQustionSpan");
 console.log(questionNumberElm);
@@ -15,13 +16,11 @@ window.onload = () => {
 let question = await fetchQuestions(url);
 question = question[0];
 
-showQuestion(question, quizWrapper, questionNumberElm);
+showQuestion(question, quizWrapper, questionNumberElm, dogru, yanlis);
 
 var optionElements = document.getElementsByClassName("options");
 
 const selectOption = (event) => {
-  let dogru = 0;
-  let yanlis = 0;
   if (event.target.innerHTML === question.correct_answer) {
     event.target.style.backgroundColor = "green";
     event.target.style.color = "white";
@@ -56,8 +55,7 @@ const nextQuestion = async () => {
   showLoading(quizWrapper);
   question = await fetchQuestions(url);
   question = question[0];
-  showQuestion(question, quizWrapper, questionNumberElm);
-  // document.querySelector('.numberspan').innerHTML=numberquestions++;
+  showQuestion(question, quizWrapper, questionNumberElm, dogru, yanlis);
   var optionElements = document.getElementsByClassName("options");
   for (var i = 0; i < optionElements.length; i++) {
     optionElements[i].addEventListener("click", selectOption);

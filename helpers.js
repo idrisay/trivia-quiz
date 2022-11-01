@@ -13,16 +13,18 @@ let numberquestions = 0;
 const showQuestion = (
   question,
   quizWrapper,
-  questionNumberElm
+  questionNumberElm,
+  dogru,
+  yanlis
 ) => {
   let randomNumber = getRandomNumber(0, 3);
-  console.log('noq', numberquestions);
+  console.log("noq", numberquestions);
 
   numberquestions += 1;
 
   console.log(questionNumberElm);
 
-  questionNumberElm.innerHTML= numberquestions;
+  questionNumberElm.innerHTML = numberquestions;
 
   let answers = [...question.incorrect_answers];
 
@@ -43,17 +45,16 @@ const showQuestion = (
     "<p class='true'>" +
     "True:" +
     "<span class='truespan '>" +
-    "0" +
+    dogru +
     "</span>" +
     "</P>";
   newQuestionElm +=
     "<p class='false'>" +
     "False:" +
     "<span class='falsespan '>" +
-    "0" +
+    yanlis +
     "</span>" +
     "</P>";
-  // newQuestionElm+= "<p class='questionnumber'>" + 'Number of Question  ' +"<span class='numberspan '>" + " 1" + "</span>" +  "</P>";
 
   answers.forEach((element) => {
     newQuestionElm += '<p class="options">' + element + "</p>";

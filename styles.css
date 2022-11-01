@@ -90,6 +90,7 @@ html {
  .numberquestion{
   position: absolute;
   top: 20px;
+  font-size: 1.4rem;
 } 
 
 /* .questionnumber {
