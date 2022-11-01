@@ -67,3 +67,40 @@ html {
   margin-top: 10px;
   cursor: pointer;
 }
+
+.true,
+.false {
+  position: absolute;
+}
+
+.true {
+  color: green;
+  bottom: -10px;
+  left: 545px;
+  font-size: 1.8rem;
+}
+
+.false {
+  color: red;
+  bottom: -10px;
+  right: 545px;
+  font-size: 1.8rem;
+}
+
+ .numberquestion{
+  position: absolute;
+  top: 20px;
+} 
+
+/* .questionnumber {
+  position: absolute;
+  top: 60px;
+  left: 130px;
+  font-size: 1.4rem;
+}
+
+.numberspan {
+  margin: 5px;
+  padding: 7px;
+  font-size: 2rem;
+} */
