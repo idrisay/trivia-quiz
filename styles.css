@@ -75,16 +75,16 @@ html {
 
 .true {
   color: green;
-  bottom: -10px;
-  left: 545px;
   font-size: 1.8rem;
+  bottom: 0px;
+  left: 10px;
 }
 
 .false {
   color: red;
-  bottom: -10px;
-  right: 545px;
   font-size: 1.8rem;
+  bottom: 0px;
+  right: 10px;
 }
 
  .numberquestion{
@@ -93,15 +93,3 @@ html {
   font-size: 1.4rem;
 } 
 
-/* .questionnumber {
-  position: absolute;
-  top: 60px;
-  left: 130px;
-  font-size: 1.4rem;
-}
-
-.numberspan {
-  margin: 5px;
-  padding: 7px;
-  font-size: 2rem;
-} */
